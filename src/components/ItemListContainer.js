@@ -1,11 +1,10 @@
 import './Index.css';
 
-function App() {
-  return (
-    <div className="divItem">
-        <h1 className="">Hola mundo!</h1>
-    </div>
-  );
+
+export const ItemListContainer = ({children}) => {
+	return (
+		<h5 className='h'>{children}</h5>
+	);
 }
 
-export default App;
+export default ItemListContainer;
