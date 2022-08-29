@@ -1,8 +1,8 @@
-import logo from './logo.jpg'
+import carrito from './carrito.jpg'
 
 function App() {
     return (
-        <img width="100px" height="80px" src={logo}/>
+        <img width="50px" height="40px" src={carrito} className="cartWidget"/>
     );
 }
 

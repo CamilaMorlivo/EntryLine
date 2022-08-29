@@ -4,9 +4,9 @@ import CartWidget from './CartWidget'
 function App() {
     return (
         <header>
-            <CartWidget/>
+            <img width="100px" height="80px" src="logo.jpg"/>
             <nav className="navbar navbar-expand-lg navbar-light">
-                <div className="container-fluid">
+                <div className="container-fluid" >
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
@@ -23,6 +23,11 @@ function App() {
                             </li>
                         </ul>
                     </div>
+
+                    <div>
+                        <CartWidget/>
+                    </div>
+                    
                 </div>
             </nav>
         </header>
