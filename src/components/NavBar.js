@@ -1,4 +1,4 @@
-import './Index.css';
+import './css/Index.css';
 import CartWidget from './CartWidget'
 
 function App() {
@@ -13,13 +13,13 @@ function App() {
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-12">
                             <li className="nav-item">
-                                <a className="nav-link active" aria-current="page" href="">REGISTRARTE</a>
+                                <a className="nav-link active" aria-current="page" href="">LINK 1</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link active" aria-current="page" href="">ENTRADAS</a>
+                                <a className="nav-link active" aria-current="page" href="">LINK 2</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link active" aria-current="page" href="">CONTACTO</a>
+                                <a className="nav-link active" aria-current="page" href="">LINK 3</a>
                             </li>
                         </ul>
                     </div>

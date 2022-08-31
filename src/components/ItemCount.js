@@ -1,4 +1,4 @@
-import './Index.css';
+import './css/Index.css';
 import {useState} from "react"
 
 export const ItemCount = ({stock}) => {

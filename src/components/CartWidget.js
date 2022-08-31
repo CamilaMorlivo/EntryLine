@@ -1,4 +1,4 @@
-import carrito from './carrito.jpg'
+import carrito from './img/carrito.jpg'
 
 function App() {
     return (
