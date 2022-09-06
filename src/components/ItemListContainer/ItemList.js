@@ -1,4 +1,4 @@
-import Item from "../components/Item";
+import Item from "./Item";
 
 export const ItemList = ({productos = []}) => {
 	
@@ -7,7 +7,7 @@ export const ItemList = ({productos = []}) => {
 		<div>
 
 			<h2>PRODUCTOS:</h2>
-
+			
 			{productos.map((prod) => <Item producto = {prod} key={prod.id}/>)}
 
 		</div>

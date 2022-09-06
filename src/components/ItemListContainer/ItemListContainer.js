@@ -1,7 +1,7 @@
-import './css/Index.css';
+import '../css/Index.css';
 import { useEffect, useState } from 'react';
-import { getData } from '../helpers/getData';
-import ItemList from '../helpers/ItemList';
+import { getData } from '../../helpers/getData';
+import ItemList from './ItemList';
 
 export const ItemListContainer = ({children}) => {
 	
