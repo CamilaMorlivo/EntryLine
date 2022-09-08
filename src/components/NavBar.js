@@ -1,5 +1,6 @@
 import './css/Index.css';
 import CartWidget from './CartWidget'
+import {Link} from 'react-router-dom' 
 
 function App() {
     return (
@@ -13,13 +14,13 @@ function App() {
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-12">
                             <li className="nav-item">
-                                <a className="nav-link active" aria-current="page" href="">LINK 1</a>
+                                <Link className='aLink' to='/productos/arriba'>ARRIBA</Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link active" aria-current="page" href="">LINK 2</a>
+                                <Link className='aLink' to='/productos/abajo'>ABAJO</Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link active" aria-current="page" href="">LINK 3</a>
+                                <Link className='aLink' to='/productos/calzado'>CALZADO</Link>
                             </li>
                         </ul>
                     </div>

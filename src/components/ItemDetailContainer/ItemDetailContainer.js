@@ -2,37 +2,48 @@ import '../css/Index.css';
 import { useEffect, useState } from 'react';
 import { getData } from '../../helpers/getData';
 import ItemDetail from './ItemDetail';
+import { useParams } from 'react-router-dom';
 
-export const ItemDetailContainer = ({children, id}) => {
+export const ItemDetailContainer = () => {
 	
 	const [item, setItem] = useState([])
+	const [loading, setLoading] =  useState()
+
+	const {itemId} = useParams()
+
+	console.log(itemId)
 
 	useEffect(() => {
 
+		setLoading(true)
+
 		getData()
+
 			.then((res) => {
 
-				setItem(res[id])
-				console.log(res)
-
+				setItem(res.find((prod) => prod.id === Number(itemId)))
+				
 			})
 			.catch((error) => {
 				console.log(error)
 			})
 			.finally(() => {
-				console.log("Fin del proceso")
+				setLoading(false)
 			})
-	})
+	},[itemId])
 
 	return (
 		<div>
 
-			<h1 className='h'>{children}</h1>
+			<h1 className='h'>¡BIENVENIDO!</h1>
 			<hr/>
 
-            <h3>PRODUCTO:</h3>
+			{
+				loading 
+				? <h2>Cargando...</h2>
+				: <ItemDetail item={item}/>
 
-			<ItemDetail item={item}/>
+			}
 
 		</div>
 

@@ -5,7 +5,8 @@ export const stock = [
         precio: 1000,
         img: '',
         stock: 50,
-        desc: 'Un gran producto'  
+        desc: 'Un gran producto' ,
+        category: 'arriba'
     },
     {
         id: 2,
@@ -13,7 +14,8 @@ export const stock = [
         precio: 2000,
         img: '',
         stock: 50,
-        desc: 'Un gran producto'  
+        desc: 'Un gran producto' ,
+        category: 'arriba'
     },
     {
         id: 3,
@@ -21,7 +23,8 @@ export const stock = [
         precio: 3000,
         img: '',
         stock: 50,
-        desc: 'Un gran producto'  
+        desc: 'Un gran producto',
+        category: 'abajo'  
     },
     {
         id: 4,
@@ -29,7 +32,8 @@ export const stock = [
         precio: 4000,
         img: '',
         stock: 50,
-        desc: 'Un gran producto'  
+        desc: 'Un gran producto',
+        category: 'abajo'   
     },
     {
         id: 5,
@@ -37,7 +41,8 @@ export const stock = [
         precio: 5000,
         img: '',
         stock: 50,
-        desc: 'Un gran producto'  
+        desc: 'Un gran producto',
+        category: 'calzado'    
     },
     {
         id: 6,
@@ -45,6 +50,7 @@ export const stock = [
         precio: 6000,
         img: '',
         stock: 50,
-        desc: 'Un gran producto'  
+        desc: 'Un gran producto',
+        category: 'calzado'   
     }
 ]
