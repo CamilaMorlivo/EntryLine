@@ -6,7 +6,7 @@ export const getData = () =>{
 
         setTimeout(()=>{
             resolve(stock)
-        }, 1000)
+        }, 500)
     })
 
 }

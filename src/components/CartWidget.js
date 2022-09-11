@@ -2,7 +2,7 @@ import carrito from './img/carrito.jpg'
 
 function App() {
     return (
-        <img width="50px" height="40px" src={carrito} className="cartWidget"/>
+        <img width="55px" height="45px" src={carrito} className="cartWidget"/>
     );
 }
 

@@ -4,10 +4,9 @@ import { getData } from '../../helpers/getData';
 import ItemList from './ItemList';
 import { useParams } from 'react-router-dom';
 
-
 export const ItemListContainer = () => {
 	
-	const [productos, setProductos] = useState([])
+	const [eventos, setEventos] = useState([])
 	const [loading, setLoading] =  useState()
 	const {categoryId} = useParams()
 
@@ -21,9 +20,9 @@ export const ItemListContainer = () => {
 			.then((res) => {
 
 				if(!categoryId){
-					setProductos(res)
+					setEventos(res)
 				}else{
-					setProductos(res.filter((prod) => prod.category === categoryId))
+					setEventos(res.filter((prod) => prod.category === categoryId))
 				}
 
 			})
@@ -39,13 +38,13 @@ export const ItemListContainer = () => {
 		
 		<div>
 
-			<h1 className='h'>¡BIENVENIDO!</h1>
-			<hr/>
+				<h1 className='h'> ¡BIENVENIDO!</h1>
+
 
 			{
 				loading 
 				? <h2>Cargando...</h2>
-				: <ItemList productos={productos}/>
+				: <ItemList eventos={eventos}/> 
 			}
 
 		</div>

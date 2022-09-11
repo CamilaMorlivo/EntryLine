@@ -21,7 +21,7 @@ export const ItemDetailContainer = () => {
 
 			.then((res) => {
 
-				setItem(res.find((prod) => prod.id === Number(itemId)))
+				setItem(res.find((evt) => evt.id === Number(itemId)))
 				
 			})
 			.catch((error) => {
@@ -36,7 +36,6 @@ export const ItemDetailContainer = () => {
 		<div>
 
 			<h1 className='h'>¡BIENVENIDO!</h1>
-			<hr/>
 
 			{
 				loading 

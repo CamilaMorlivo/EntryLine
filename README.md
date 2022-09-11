@@ -1,70 +1,63 @@
-# Getting Started with Create React App
+### PROYECT NAME: "EntryLine"
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+EntryLine es un  servicio donde podrás encontrar distintos eventos de diferentes categorías. La aplicación está pensada para ser una aplicacion web en donde puedas comprar tus entradas para conciertos, obras de teatro y distintos eventos de manera fácil e intuitiva. 
 
-## Available Scripts
+Cosas a agregar en un futuro:
+->La compra de entradas.
+->La posibilidad de crear tu cuenta.
+->Al crear tu cuenta, tener un registro de las entradas que compras.
 
-In the project directory, you can run:
+## Pre-requisitos 📋
 
-### `npm start`
+Instalaciones previas:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+    -GitBash v2.35.1.windows.2 [https://git-scm.com/downloads]
+    -Node js v18.0.0 [https://nodejs.org/es/] 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+Dependencias necesarias:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    -React js [https://reactjs.org/]
 
-### `npm run build`
+        1er comando: npm install -g create-react-app
+        2do comando: create-react-app my-app
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    -React-router-dom [https://reactrouter.com/en/main]
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+        Instalar la dependencia con el comando:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+            1er comando: npm install react-router-dom
 
-### `npm run eject`
+        Importar BrowserRouter, Routes, Route en nuestro archivo App,js:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+            import {BrowserRouter,Routes, Route} from "react-router-dom"; 
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+        Configurar lo siguientes: 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+            1.Wrappear (envolver) la app en un BrowserRouter
+            2.Crear un Routes(donde proyectamos las vistas navegadas)
+            3.Crear los Route's de las distintas navegaciones con sus componentes asociados.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Librerias usadas:
 
-## Learn More
+    -Bootstrap [https://getbootstrap.com/]
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+        1.Agregar en el header del index.html la etiqueta <link></link>:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" 
+            rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" 
+            crossorigin="anonymous">
 
-### Code Splitting
+        2.Agregar en el body del index.html (preferentemente antes de cerrar la etiqueta) los siguientes script:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" 
+            integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" 
+            crossorigin="anonymous"></script>
 
-### Analyzing the Bundle Size
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" 
+            integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" 
+            crossorigin="anonymous"></script>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### GIF  de presentacion de EntryLine:
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![](gif/Animation.gif)
