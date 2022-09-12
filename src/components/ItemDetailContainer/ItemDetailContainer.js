@@ -41,6 +41,7 @@ export const ItemDetailContainer = () => {
 				loading 
 				? <h2>Cargando...</h2>
 				: <ItemDetail item={item}/>
+				
 
 			}
 

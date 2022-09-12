@@ -21,8 +21,6 @@ const App = () => {
                     
                 </Routes>
                 
-                <ItemCount/>
-
             </BrowserRouter>
 
         </div>  

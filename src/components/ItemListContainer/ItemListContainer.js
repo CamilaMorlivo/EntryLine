@@ -38,7 +38,7 @@ export const ItemListContainer = () => {
 		
 		<div>
 
-				<h1 className='h'> ¡BIENVENIDO!</h1>
+				<h1 className='h'> ¡BIENVENIDX!</h1>
 
 
 			{

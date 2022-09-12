@@ -1,13 +1,18 @@
 import './css/Index.css';
-import {useState} from "react"
+import Swal from 'sweetalert'
 
-export const ItemCount = ({stock}) => {
+export const ItemCount = ({stock, counter, setCounter, handleAgregar}) => {
 
-	const [counter, setCounter] = useState(1)
 
 	const sumar = () => {
 		if(stock <= counter){
-			alert("No hay suficiente stock!")
+			Swal({
+				title: "Error!",
+				text: "No hay suficiente stock.",
+				icon: "error",
+				timer: "2000"  
+			});
+
 		}else{
 			setCounter(counter + 1)	
 		}
@@ -17,33 +22,27 @@ export const ItemCount = ({stock}) => {
 		if(counter > 0){
 			setCounter(counter - 1)
 		}
-		
-
 	}
 
-	const [carrito, setCarrito] = useState([])
 
-	const onAdd = () =>{
-
-		if(counter <= 15 && counter > 0){
-			var newItem = {
-				stock: counter
-			}
-			
-			setCarrito([...carrito, newItem])
-		}
-
-		console.log(carrito)
-	}
 
 	return (
 		<div className='contador'>
+
 			<div className='divContador'>
-				<button onClick={restar}>-</button>
-				<span>{counter}</span>		
-				<button onClick={sumar}>+</button>
+				
+				<button onClick={restar} className="btn btn-outline-primary ">-</button>
+				
+				{counter}		
+				
+				<button onClick={sumar} className="btn btn-outline-primary ">+</button>
+			
 			</div>
-			<button onClick={onAdd}>Agregar al carrito</button>		
+
+			<button onClick={handleAgregar} className="btn btn-outline-success ">
+				Agregar al carrito
+			</button>		
+		
 		</div>
 	);
 }
