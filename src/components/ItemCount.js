@@ -1,12 +1,12 @@
 import './css/Index.css';
-import Swal from 'sweetalert'
+import Swal from 'sweetalert2'
 
 export const ItemCount = ({stock, counter, setCounter, handleAgregar}) => {
 
 
 	const sumar = () => {
 		if(stock <= counter){
-			Swal({
+			Swal.fire({
 				title: "Error!",
 				text: "No hay suficiente stock.",
 				icon: "error",

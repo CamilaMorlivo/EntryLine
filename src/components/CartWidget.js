@@ -1,9 +1,18 @@
-import carrito from './img/carrito.jpg'
+import {BsFillCartCheckFill} from 'react-icons/bs'
+import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { CartContext } from '../context/CartContext';
 
 function App() {
+
+    const {cartQuantity} = useContext(CartContext)
+
     return (
-        <img width="55px" height="45px" src={carrito} className="cartWidget"/>
-    );
+        <Link to="/cart" className='btn btn-light btn-lg'>
+            <BsFillCartCheckFill/>
+            <span >{cartQuantity()}</span>
+        </Link>
+   );
 }
 
 export default App;

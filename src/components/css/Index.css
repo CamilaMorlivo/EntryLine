@@ -9,7 +9,7 @@ header {
 }
 header img {
     border-radius: 40px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.801); 
+    box-shadow: 0 4px 10px white; 
 }
 
 header nav ul {
@@ -24,10 +24,11 @@ header nav ul li a {
     margin-left: 25px; 
     background-color: #76fff8dc;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.801); 
+    box-shadow: 0 4px 10px #76fff8dc; 
     padding: 15px 25px;
     text-decoration: none;
     color: black;
+    border: 3px solid #76fff8dc; 
 }
             
 header nav ul li a:hover {
@@ -84,19 +85,40 @@ body{
     background-image: url(../img/fondo2.jpg);
 }
 
-.divEvento, .divEventoDetail{
+.divEvento, .divEventoDetail, .divCarrito{
     width: 400px;
     margin-left: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.801); 
+    box-shadow: 0 4px 10px #76fff8dc; 
     background-color: rgba(255, 255, 255, 0.788);
     margin-bottom: 30px;
     padding: 15px;
     border-radius: 15px;
+    border: 8px solid #76fff8dc;
 }
 
 .divEventoDetail{
     margin-left: 50px;
     background-color: white;
+    margin-top: 50px;
+}
+
+.divCarrito{
+    margin-top: 50px;
+
+}
+
+.divEntradasCarrito{
+
+    border-bottom: 1px solid rgba(161, 161, 161, 0.863);
+    margin-bottom: 10px;
+}
+
+.divCarrito > h2 {
+    text-align: center;
+}
+
+.divEntradasCarrito > button{
+    margin-bottom: 10px;
 }
 
 .divEvento:hover{
@@ -116,3 +138,4 @@ body{
     flex-wrap: wrap;
     justify-content: center;
 }
+

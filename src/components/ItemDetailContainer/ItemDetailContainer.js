@@ -35,11 +35,9 @@ export const ItemDetailContainer = () => {
 	return (
 		<div>
 
-			<h1 className='h'>¡BIENVENIDO!</h1>
-
 			{
 				loading 
-				? <h2>Cargando...</h2>
+				? <h2 className='loading'>Cargando...</h2>
 				: <ItemDetail item={item}/>
 				
 
