@@ -1,8 +1,14 @@
-import './css/Index.css';
+import '../css/Index.css';
 import CartWidget from './CartWidget'
 import {Link} from 'react-router-dom' 
+// import {useLoginContext} from '../context/LoginCotext'
+import {useCartContext} from '../../context/CartContext'
 
 function App() {
+
+    // const {user, logout} = useLoginContext()
+    const {cart} = useCartContext()
+
     return (
         <header>
             <Link to='./'>
@@ -31,10 +37,17 @@ function App() {
                 </div>
             </nav>
 
-            <div>
+            {cart.length >0 && <CartWidget/>}
+
+            {/* <div>
                 <CartWidget/>
-            </div>
+            </div> */}
             
+            {/* <div className='header-user'>
+                <small>Bienvenido: {user.user}</small>
+                <button onClick={logout} className='btn btn-outline-danger'> Logout </button>
+            </div> */}
+
         </header>
     );
 }

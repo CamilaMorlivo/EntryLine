@@ -50,7 +50,10 @@ export const ItemDetail = ({item}) => {
 
 			<small>Stock disponible: {item.stock}</small>
 			
-			{/* <Select options={item.asientos} onSelect={setAsiento}/> */}
+			{
+			/* {item.promo && <h5 style={{color: 'red'}}>{item.promo}% OFF!!</h5>} -> SOLO PARA LOS ITEMS CON LA PROPIEDAD "PROMO"*/
+			/* <Select options={item.asientos} onSelect={setAsiento}/> */
+			}
 			
 			{
 				isInCart(item.id) 

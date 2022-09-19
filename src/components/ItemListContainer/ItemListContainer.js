@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { getData } from '../../helpers/getData';
 import ItemList from './ItemList';
 import { useParams } from 'react-router-dom';
+import Loader from '../Loader/Loader';
 
 export const ItemListContainer = () => {
 	
@@ -34,6 +35,10 @@ export const ItemListContainer = () => {
 			})
 	}, [categoryId])
 
+	// if(loading){
+	// 	return <div> <h2>Cargando...</h2> </div>
+	// }
+
 	return (
 		
 		<div>
@@ -41,7 +46,7 @@ export const ItemListContainer = () => {
 
 			{
 				loading 
-				? <h2 className='loading'>Cargando...</h2>
+				? <Loader/>
 				: <ItemList eventos={eventos}/> 
 			}
 

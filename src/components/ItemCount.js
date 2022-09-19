@@ -19,9 +19,8 @@ export const ItemCount = ({stock, counter, setCounter, handleAgregar}) => {
 	}
 
 	const restar = () =>{
-		if(counter > 0){
-			setCounter(counter - 1)
-		}
+
+		setCounter(counter - 1)
 	}
 
 
@@ -31,11 +30,25 @@ export const ItemCount = ({stock, counter, setCounter, handleAgregar}) => {
 
 			<div className='divContador'>
 				
-				<button onClick={restar} className="btn btn-outline-primary ">-</button>
+				<button 
+					disabled={counter === 1}
+					onClick={restar} 
+					className="btn btn-outline-primary"
+
+					// className={`btn mx-2 ${counter===0? "btn btn-outline-danger" :"btn btn-outline-primary"}`}
+				>
+					-
+				</button>
 				
 				{counter}		
 				
-				<button onClick={sumar} className="btn btn-outline-primary ">+</button>
+				<button 
+					// disabled={counter === stock}
+					onClick={sumar} 
+					className="btn btn-outline-primary "
+				>
+					+
+				</button>
 			
 			</div>
 

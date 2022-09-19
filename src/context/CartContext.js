@@ -1,5 +1,5 @@
 import { createContext } from "react"
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import Swal from 'sweetalert2'
 
 export const CartContext = createContext()
@@ -64,4 +64,8 @@ export const CartProvider = ({children}) =>{
         </CartContext.Provider>
     )
 
+}
+
+export const useCartContext = () => {
+    return useContext(CartContext)
 }
