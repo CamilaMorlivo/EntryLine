@@ -12,7 +12,7 @@ export const ItemList = ({eventos = []}) => {
 
 				if(evt.stock > 0){
 
-					return <Item evento = {evt} key={evt.id}/>
+					return <Item evento = {evt} key={evt.Id}/>
 				}else{
 					return null
 				}	

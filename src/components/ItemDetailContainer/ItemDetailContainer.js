@@ -4,6 +4,9 @@ import { getData } from '../../helpers/getData';
 import ItemDetail from './ItemDetail';
 import { useParams } from 'react-router-dom';
 import Loader from '../Loader/Loader';
+import {doc, getDoc} from 'firebase/firestore'
+import { db } from '../../Firebase/config';
+
 
 export const ItemDetailContainer = () => {
 	
@@ -12,26 +15,35 @@ export const ItemDetailContainer = () => {
 
 	const {itemId} = useParams()
 
-	console.log(itemId)
-
 	useEffect(() => {
 
 		setLoading(true)
 
-		getData()
+		// getData()
 
-			.then((res) => {
+		// 	.then((res) => {
 
-				setItem(res.find((evt) => evt.id === Number(itemId)))
+		// 		setItem(res.find((evt) => evt.id === Number(itemId)))
 				
-			})
-			.catch((error) => {
-				console.log(error)
+		// 	})
+		// 	.catch((error) => {
+		// 		console.log(error)
+		// 	})
+		// 	.finally(() => {
+		// 		setLoading(false)
+		// 	})
+
+		const docRef = doc(db, 'eventos', itemId)
+		getDoc(docRef)
+			.then((doc)=>{
+				setItem({id: doc.id, ...doc.data()})
+			
 			})
 			.finally(() => {
 				setLoading(false)
 			})
-	},[itemId])
+
+	}, [])
 
 	return (
 		<div>
