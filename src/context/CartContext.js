@@ -44,9 +44,21 @@ export const CartProvider = ({children}) =>{
             if (result.isConfirmed) {
                 setCart([])
             }
-          })
+          })  
+    }
 
-        
+    const terminarCompra = () => {
+        setCart([])
+    }
+
+    const terminarCompraConSwalAlert = (id) => {
+        Swal.fire({
+            title: 'Compra exitosa',
+            text: `Tu número de orden es: ${id}`,
+            icon: 'success',
+            confirmButtonColor: '#3085d6',
+            confirmButtonText: 'Genial!'
+        })
     }
 
     return(
@@ -57,7 +69,9 @@ export const CartProvider = ({children}) =>{
             cartQuantity, 
             cartTotal,
             emptyCart,
-            removeItem
+            removeItem,
+            terminarCompra,
+            terminarCompraConSwalAlert
         } }>
             {children}
 
