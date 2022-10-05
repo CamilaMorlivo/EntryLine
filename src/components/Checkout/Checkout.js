@@ -5,6 +5,8 @@ import {addDoc, collection, getDocs, writeBatch, query, where, documentId} from 
 import { db } from '../../Firebase/config';
 import '../css/Index.css';
 import { useForm } from "../Hooks/useForm";
+import Swal from 'sweetalert2'
+
 
 const Checkout = () => {
 
@@ -26,23 +28,12 @@ const Checkout = () => {
             total: cartTotal()
         }
 
-        if(values.nombre.length < 3){
-            alert("Nombre incorrecto")
-            return
-        }
-
-        if(values.email.length < 2){
-            alert("Email incorrecto")
-            return
-        }
-
         const ordenesRef = collection(db, 'ordenes')
 
         console.log("Sumbit del form")
         console.log(orden)
 
         const batch = writeBatch(db)
-        const ordersRef = collection(db, 'orders')
         const eventosRef = collection(db, 'eventos')
 
         const q = query(eventosRef, where(documentId(), 'in', cart.map(item => item.id)))
@@ -76,7 +67,13 @@ const Checkout = () => {
                 })
         }else{
 
-            alert("Hay items sin stcok")
+            Swal.fire({
+                title: 'Error!',
+                text: "No hay stock.",
+                icon: 'warning',
+                showCancelButton: true
+              })
+
             console.log(outOfStock)
         }
     }
