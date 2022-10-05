@@ -9,7 +9,7 @@ header {
 }
 header img {
     border-radius: 40px;
-    box-shadow: 0 4px 10px white; 
+    box-shadow: 0 4px 10px black; 
 }
 
 header nav ul {
@@ -22,21 +22,25 @@ header nav ul li{
 header nav ul li a {
     display: block;
     margin-left: 25px; 
-    background-color: #76fff8dc;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px #76fff8dc; 
-    padding: 15px 25px;
+    background-color: #1e212e;
+    border-radius: 20px;
+    box-shadow: 0 1px 10px #1e212e; 
+    padding: 10px 20px;
     text-decoration: none;
-    color: black;
+    color: white;
 }
             
 header nav ul li a:hover {
-    background-color: #76fff9;
+    background-color: #eb2055;
     border-radius: 15px;
     transform: scale(1.1, 1.1); 
     transition: all 300ms ease-out;
-    box-shadow: 0 4px 50px #76fff8dc; 
     color: black;
+}
+
+.aLink{
+    font-family: 'Open Sans', sans-serif;
+    
 }
 
 .h{
@@ -85,9 +89,20 @@ body{
     background-image: url(../img/fondo2.jpg);
 }
 
-.divEvento, .divEventoDetail, .divCarrito{
+.divEvento{
     width: 400px;
-    margin-left: 20px;
+    height: 300px;
+    margin-left: 35px;
+    margin-bottom: 30px;
+
+}
+
+.divEventoDetail, .divCarrito{
+    margin-left: 50px;
+    background-color: white;
+    margin-top: 50px;
+    width: 400px;
+    margin-left: 45px;
     box-shadow: 0 4px 20px white; 
     background-color: rgba(255, 255, 255, 0.788);
     margin-bottom: 30px;
@@ -96,14 +111,9 @@ body{
     border: 1px solid white;
 }
 
-.divEventoDetail{
-    margin-left: 50px;
-    background-color: white;
-    margin-top: 50px;
-}
-
 .divCarrito{
     margin-top: 50px;
+    background-color: white;
 
 }
 
@@ -124,14 +134,12 @@ body{
 .divEvento:hover{
     transition: all 300ms ease-out;
     transform: scale(1.1, 1.1);
-    background-color: white;
-    box-shadow: 0 4px 50px white; 
-
 }
 
 .divEventoDetail:hover{
     transition: all 300ms ease-out;
     transform: scale(1.1, 1.1);
+    background-color: white;
 }
 
 .mainContainer{
@@ -173,5 +181,56 @@ body{
 
 .formCheckout > h2{
     margin-top: 30px;
+}
+
+.divEvento > figure{
+    width: auto;
+    height: auto;
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 1px 10px white;
+    cursor: pointer;
+}
+
+.divEvento > figure > img {
+    width: 400px;
+    height: 280px;
+    transition: all 500ms ease-out; 
+    box-shadow: 0 4px 20px white; 
+    border-radius: 15px;
+}
+
+.divEvento > figure > div {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(9, 10, 10, 0.849);
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    transition: all 500ms ease-out;
+    opacity: 0;
+    text-align: center; 
+}
+
+.eventoLink > h4{
+    margin-top: 20px;
+}
+
+.divEvento > figure > div:hover{
+    opacity: 1;
+    visibility: visible; 
+    
+}
+
+.eventoLink{
+    text-decoration: none;
+    color: white;
+}
+
+.eventoLink:hover{
+    text-decoration: none;
+    color: white;
 }
 

@@ -3,8 +3,6 @@ import './Loader.css'
 
 const Loader = () => {
     
-    {/* react bootstrap.github.io/components/spinners */}
-
     return(
         <div className='loader'>
             <Spinner animation="border" variant="primary"/>

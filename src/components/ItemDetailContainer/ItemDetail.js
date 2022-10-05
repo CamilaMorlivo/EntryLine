@@ -1,16 +1,14 @@
-import ItemCount from "../ItemCount"
+import ItemCount from "../ItemCount/ItemCount"
 import {useContext, useState} from "react"
 import Swal from 'sweetalert2'
 import { CartContext } from "../../context/CartContext"
 import { Link } from "react-router-dom"
-//import Select from "../Select/Select"
 
 export const ItemDetail = ({item}) => {
 
 	const {cart, isInCart, addToCard} = useContext(CartContext)
 	
 	const [cantidad, setCantidad] = useState(1)
-	//const[asiento, setAsiento] = useState(item.asientos[0].value)
 
 	const handleAgregar = () =>{
 
@@ -18,7 +16,6 @@ export const ItemDetail = ({item}) => {
 			id: item.id,
 			nombre: item.nombre,
 			precio: item.precio,
-			// asiento,
 			cantidad
 		}
 
@@ -35,11 +32,6 @@ export const ItemDetail = ({item}) => {
 		});
 	}
 
-
-	// const isInCart = (id) =>{
-		// return cart.find((item) => item.id)
-	// }
-
 	return (
 		<div className="divEventoDetail">
 			<h4>{item.nombre}</h4>
@@ -49,12 +41,7 @@ export const ItemDetail = ({item}) => {
 			<p>{item.descCompleta}</p>
 
 			<small>Stock disponible: {item.stock}</small>
-			
-			{
-			/* {item.promo && <h5 style={{color: 'red'}}>{item.promo}% OFF!!</h5>} -> SOLO PARA LOS ITEMS CON LA PROPIEDAD "PROMO"*/
-			/* <Select options={item.asientos} onSelect={setAsiento}/> */
-			}
-			
+
 			{
 				isInCart(item.id) 
 				?	<Link to="/cart" className="btn btn-outline-success mx-4">Terminar mi compra</Link>

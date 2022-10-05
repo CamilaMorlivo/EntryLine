@@ -8,7 +8,6 @@ function App() {
     const {cartQuantity} = useContext(CartContext)
 
     return (
-        // <Link to="/cart" className={`widget ${cart.length > 0 ? 'widget-visible' : ''}`}>
         <Link to="/cart" className='btn btn-outline-light m-3 btn-lg'>
             <BsFillCartCheckFill/>
             <span >{cartQuantity()}</span>

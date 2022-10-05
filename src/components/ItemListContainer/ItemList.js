@@ -5,8 +5,6 @@ export const ItemList = ({eventos = []}) => {
 
 	return (
 		<div className="mainContainer">
-
-			{/* {eventos.map((evt) => <Item evento = {evt} key={evt.id}/>)} */}
 			
 			{eventos.map((evt) => {
 

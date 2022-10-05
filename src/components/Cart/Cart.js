@@ -2,15 +2,12 @@ import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 import {BsFillTrashFill} from 'react-icons/bs'
 import '../css/Index.css';
-import { Link, Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 const Cart = () => {
 
     const {cart, cartTotal, emptyCart, removeItem} = useContext(CartContext)
-
-    // if (cart.length === 0) return <Navigate to="/"/>
-
 
     if(cart.length === 0){
         return(

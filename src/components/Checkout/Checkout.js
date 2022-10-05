@@ -1,29 +1,23 @@
 import { useState } from "react"
 import { useCartContext } from "../../context/CartContext"
 import {Navigate} from 'react-router-dom';
-import {addDoc, collection} from 'firebase/firestore'
+import {addDoc, collection, getDocs, writeBatch, query, where, documentId} from 'firebase/firestore'
 import { db } from '../../Firebase/config';
 import '../css/Index.css';
+import { useForm } from "../Hooks/useForm";
 
 const Checkout = () => {
 
-    const {cart, cartTotal, terminarCompra, terminarCompraConSwalAlert} = useCartContext()
+    const {cart, cartTotal, terminarCompra} = useCartContext()
     const [orderId, setOrderId] = useState()
-    const [values, setValues] = useState({
+
+    const {values, handleInputChange} = useForm({
         nombre: '',
         email: '',
         direccion: '',
     })
 
-
-    const handleInputChange = (e) => {
-        setValues({
-            ...values,
-           [e.target.name]: e.target.value
-        })
-    }
-
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
 
         const orden ={
@@ -43,17 +37,51 @@ const Checkout = () => {
         }
 
         const ordenesRef = collection(db, 'ordenes')
-        addDoc(ordenesRef, orden)
-            .then((doc) => {
-                console.log(doc.id)
-                // terminarCompraConSwalAlert(doc.id)
-                setOrderId(doc.id)
-                terminarCompra()
-            })
 
         console.log("Sumbit del form")
         console.log(orden)
+
+        const batch = writeBatch(db)
+        const ordersRef = collection(db, 'orders')
+        const eventosRef = collection(db, 'eventos')
+
+        const q = query(eventosRef, where(documentId(), 'in', cart.map(item => item.id)))
+
+        const eventos = await getDocs(q)
+
+        const outOfStock = []
+
+        eventos.docs.forEach((doc) =>{
+            const itemInCart = cart.find(item => item.id === doc.id) 
+            
+            if(doc.data().stock >= itemInCart.cantidad){
+                batch.update(doc.ref, {
+                    stock: doc.data().stock - itemInCart.cantidad
+                })
+            }else{
+                outOfStock.push(itemInCart)
+            }
+            
+        })
+
+        if(outOfStock.length === 0){
+            batch.commit()
+                .then(() => {
+                    addDoc(ordenesRef, orden)
+                    .then((doc) => {
+                        console.log(doc.id)
+                        setOrderId(doc.id)
+                        terminarCompra()
+                    })
+                })
+        }else{
+
+            alert("Hay items sin stcok")
+            console.log(outOfStock)
+        }
     }
+
+    
 
     if(orderId){
 

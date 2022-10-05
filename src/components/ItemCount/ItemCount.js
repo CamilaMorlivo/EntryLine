@@ -1,4 +1,4 @@
-import './css/Index.css';
+import '../css/Index.css';
 import Swal from 'sweetalert2'
 
 export const ItemCount = ({stock, counter, setCounter, handleAgregar}) => {
@@ -34,8 +34,6 @@ export const ItemCount = ({stock, counter, setCounter, handleAgregar}) => {
 					disabled={counter === 1}
 					onClick={restar} 
 					className="btn btn-outline-primary"
-
-					// className={`btn mx-2 ${counter===0? "btn btn-outline-danger" :"btn btn-outline-primary"}`}
 				>
 					-
 				</button>
@@ -43,7 +41,6 @@ export const ItemCount = ({stock, counter, setCounter, handleAgregar}) => {
 				{counter}		
 				
 				<button 
-					// disabled={counter === stock}
 					onClick={sumar} 
 					className="btn btn-outline-primary "
 				>
